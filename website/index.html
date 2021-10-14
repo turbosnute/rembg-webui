@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto">
+        <style>
+            body {
+                font-family: 'Roboto', serif;
+                color:#fff;
+                font-size: 48px;
+                background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+                background-size: auto;
+                text-shadow:0px 1px 0px #33398b;
+            }
+            #box {
+                background-color:rgba(230,230,230,0.5);
+                padding: 30px;
+                max-width:fit-content;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                border-radius: 12px;
+            }
+            .content {
+                text-align: center;
+            }
+            input[type='file'] {
+                border: 3px dashed #999;
+                padding: 140px 50px 10px 50px;
+                cursor: move;
+                position:relative;
+            }
+            input[type='file']:before {
+                content: "drag & drop your files here";
+                display: block;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                width: 200px;
+                height: 40px;
+                margin: -25px 0 0 -100px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #999;
+            }
+            .myButton {
+                background-color:#515ada;
+                border-radius:12px;
+                border:1px solid #444cbb;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:17px;
+                padding:16px 31px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #33398b;
+            }
+            .myButton:hover {
+                background-color:#5cbf2a;
+            }
+            .myButton:active {
+                position:relative;
+                top:1px;
+            }
+        </style>
+    </head>
 <body>
+        <div id="box">
+            <div class="content">
+                <h3>Remove images background</h3>
 
-    <h1>Remove Background</h1>
+                <form action="http://localhost:5000" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file"/><br />
+                    <input type="submit" value="Upload" class="myButton" />
+                </form>
+            </div>
 
-    <form action="http://localhost:5001" method="post" enctype="multipart/form-data">
-        <input type="file" name="file"/>
-        <input type="submit" value="upload"/>
-     </form>
-
+    </div>
 </body>
 </html>
