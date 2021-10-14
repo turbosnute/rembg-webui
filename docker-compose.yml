@@ -3,11 +3,11 @@ version: '3'
 services:
   rembg-backend:
     build: ./rembg-backend
-    - ports: 5001:5000
-
+    ports:
+      - 5001:5000
   rembg-frontend:
     image: httpd:2.4
     volumes:
-      - ./website:/var/www/html
+      - ./website:/usr/local/apache2/htdocs
     ports:
       - 5000:80
